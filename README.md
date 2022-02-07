@@ -21,4 +21,16 @@ where R is the radius of the target circle, r is the radius of the bottom most c
   
 R = (3z+20)r/20
   
-The bigger the distance between two atom types are, the bigger the size difference. Although the above is to determine the change in the atom size as the z value changes, all the sizes are also multiplied by the value (19.6/6.4)<sup>2
+The bigger the distance between two atom types are, the bigger the size difference. Although the above is to determine the change in the atom size as the z value changes, all the sizes are also multiplied by the value (19.6/6.4)<sup>2 = 9. This is since the default plot size is 6.4x4.8, and readjusting the plot size to 19.6x14.4 meant that points had to increase by (19.6/6.4)<sup>2. If you want to change the plot size (make it bigger or smaller), then you'll have to change the following:
+```
+ax.scatter(x.iloc[i],y.iloc[i],c=col[i],s=size[i]*int(((19.2/6.4))**2),edgecolors='black',marker='o',lw=2)
+plt.legend(handles=[eval(atom_labels(i)) for i in atom_types],bbox_to_anchor=(1,1), loc="upper left",fontsize=20)
+plt.xlabel("x-coordinates (in Å)",fontsize=20)
+plt.ylabel("y-coordinates (in Å)",fontsize=20)
+plt.yticks(fontsize=20)
+plt.xticks(fontsize=20)
+plt.gcf().set_size_inches(19.2, 14.4)
+```
+
+When changing the size of the plot (last line above), you'll also want to subsequently change the size of the circle ```s=size[i]*int(((19.2/6.4))**2)``` (just replace 19.2 with your new plot width) and the font size in the plot.
+  
