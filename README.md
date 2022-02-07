@@ -17,4 +17,8 @@ All the plots have the same x-y labels, has a legend which shows which circle co
 
 R = r + z*tan(&theta;)
  
-where R is the 
+where R is the radius of the target circle, r is the radius of the bottom most circle, z is the z-value of the target atom and tan(&theta;) = 3r/20. Therefore, the final equation is:
+  
+R = (3z+20)r/20
+  
+The bigger the distance between two atom types are, the bigger the size difference. Although the above is to determine the change in the atom size as the z value changes, all the sizes are also multiplied by the value (19.6/6.4)<sup>2
