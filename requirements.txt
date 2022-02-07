@@ -1,0 +1,6 @@
+argparse
+pandas
+numpy
+python-csv
+matplotlib
+multiprocess
