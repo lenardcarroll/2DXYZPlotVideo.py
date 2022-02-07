@@ -8,4 +8,6 @@ where <INPUTSTRUCTURE> is the user's input .xyz file, <SKIPVALUE> is the how man
 
 The default for -sk is 1 (no frame is skipped), the default for -fr is 0, therefore no atoms are frozen or chosen to be blacked out, and the default for -ig is F, therefore no atoms are removed from the plot(s). 
   
-#An example of 
+## Example of the use of 2DXYZPlotVidep.py
+  
+A typical plot generated from 2DXYZPlotVideo.py looks like:
