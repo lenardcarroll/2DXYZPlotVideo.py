@@ -21,7 +21,7 @@ where R is the radius of the target circle, r is the radius of the bottom most c
   
 R = (3z+20)r/20
   
-The bigger the distance between two atom types are, the bigger the size difference. Although the above is to determine the change in the atom size as the z value changes, all the sizes are also multiplied by the value (19.6/6.4)<sup>2 = 9. This is since the default plot size is 6.4x4.8, and readjusting the plot size to 19.6x14.4 meant that points had to increase by (19.6/6.4)<sup>2. If you want to change the plot size (make it bigger or smaller), then you'll have to change the following:
+The bigger the distance between two atom types are, the bigger the size difference. Although the above is to determine the change in the atom size as the z value changes, all the sizes are also multiplied by the value (19.6/6.4)<sup>2 = 9. This is since the default plot size is 6.4x4.8 inches<sup>2, and readjusting the plot size to 19.6x14.4 inches<sup>2 meant that the points had to increase by (19.6/6.4)<sup>2. If you want to change the plot size (make it bigger or smaller), then you'll have to change the following:
 ```
 ax.scatter(x.iloc[i],y.iloc[i],c=col[i],s=size[i]*int(((19.2/6.4))**2),edgecolors='black',marker='o',lw=2)
 plt.legend(handles=[eval(atom_labels(i)) for i in atom_types],bbox_to_anchor=(1,1), loc="upper left",fontsize=20)
@@ -32,5 +32,9 @@ plt.xticks(fontsize=20)
 plt.gcf().set_size_inches(19.2, 14.4)
 ```
 
-When changing the size of the plot (last line above), you'll also want to subsequently change the size of the circle ```s=size[i]*int(((19.2/6.4))**2)``` (just replace 19.2 with your new plot width) and the font size in the plot.
+When changing the size of the plot (last line above), you'll also want to subsequently change the size of the circle ```s=size[i]*int(((19.2/6.4))**2)``` (just replace 19.2 with your new plot width) and the fontsize in the plot. Please note, that some alterations might be needed for ```s=size[i]*int(((19.2/6.4))**2)``` in case the circles are bigger/smaller than desired.
+
+## How the script works
+
+The script works by reading in the .xyz file you provide as a dataframe, removing all the headers from the dataframe (these are always the 1st and 2nd line of each frame), splitting the dataframe into multiple dataframes (one for each frame) and reordering the index of each frame. To each dataframe is then appended a new column, this column states if the atom is fixed in space or not. The user has the choice to either then black out the fixed atoms or not, and to remove the fixed atoms or not. The x-y coordinates are plotted, with the size of the points determined according to the radius of the atom (type) and its location. The plots are generated and saved in parallel in a directory called mages, and by the end all the plotted frames are appended together into an .avi file. 
   
