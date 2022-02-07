@@ -129,10 +129,10 @@ def f(j):
 
     #Here the size of the atoms in the plot are put together
     for i in frames[j].index:
-        size.append(atom_size(frames[j]['Atom'].iloc[i])+2*z_alt.iloc[i]*np.tan(np.arctan((atom_size(frames[j]['Atom'].iloc[i])/0.6-atom_size(frames[j]['Atom'].iloc[i]))/(2*10))))
+        size.append(atom_size(frames[j]['Atom'].iloc[i])+2*z_alt.iloc[i]*np.tan(np.arctan((atom_size(frames[j]['Atom'].iloc[i])/0.4-atom_size(frames[j]['Atom'].iloc[i]))/(2*10))))
     #Here the plot is made, with a black border around the points
     for i in range(len(col)):
-        ax.scatter(x.iloc[i],y.iloc[i],c=col[i],s=size[i]*int(((19.6/6.4)+0.5)**2),edgecolors='black',marker='o',lw=2)
+        ax.scatter(x.iloc[i],y.iloc[i],c=col[i],s=size[i]*int(((19.6/6.4))**2),edgecolors='black',marker='o',lw=2)
     #Creates 4 A space all around the outer atoms as to not have it disappear when atoms move out of frame
     ax.set_ylim(min_Y,max_Y)
     ax.set_xlim(min_X,max_X)
