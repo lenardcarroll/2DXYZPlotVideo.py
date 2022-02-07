@@ -8,7 +8,11 @@ where <INPUTSTRUCTURE> is the user's input .xyz file, <SKIPVALUE> is the how man
 
 The default for -sk is 1 (no frame is skipped), the default for -fr is 0, therefore no atoms are frozen or chosen to be blacked out, and the default for -ig is F, therefore no atoms are removed from the plot(s). 
   
-## Example of the use of 2DXYZPlotVidep.py
+## Example of the use of 2DXYZPlotVideo.py
   
 A typical plot generated from 2DXYZPlotVideo.py looks like:
 ![2DXYZPlotVideo.py Example Plot](https://raw.githubusercontent.com/lenardcarroll/2DXYZPlotVideo.py/main/frame_0.jpg "Example of plot from 2DXYZPlotVideo.py")
+  
+All the plots have the same x-y labels, has a legend which shows which circle corresponds to which atom, displays the minimum and maximum z value from the frame and includes some grids as to see exactly how the atoms are moving over time (more specific). Extra space is placed around every frame as to ensure that the plot won't change in size over time, messing up the video (play around with the sizes if that does happen). The size of the atoms has been chosen as either the empirical or the estimated radius of every atom, multipled by 4. Since this is a 2D plot that is supposed to contain depth (there are various z-values), the size of the atoms are changed according to the equation:
+  
+h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
