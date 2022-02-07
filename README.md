@@ -38,3 +38,5 @@ When changing the size of the plot (last line above), you'll also want to subseq
 
 The script works by reading in the .xyz file you provide as a dataframe, removing all the headers from the dataframe (these are always the 1st and 2nd line of each frame), splitting the dataframe into multiple dataframes (one for each frame) and reordering the index of each frame. To each dataframe is then appended a new column, this column states if the atom is fixed in space or not. The user has the choice to either then black out the fixed atoms or not, and to remove the fixed atoms or not. The x-y coordinates are plotted, with the size of the points determined according to the radius of the atom (type) and its location. The plots are generated and saved in parallel in a directory called mages, and by the end all the plotted frames are appended together into an .avi file. 
   
+![2DXYZPlotVideo.py Example Video](https://github.com/lenardcarroll/2DXYZPlotVideo.py/blob/main/video.mp4?raw=true "Example of a compressed generated video from 2DXYZPlotVideo.py")
+  
