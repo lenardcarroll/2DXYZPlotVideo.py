@@ -11,3 +11,4 @@ The default for -sk is 1 (no frame is skipped), the default for -fr is 0, theref
 ## Example of the use of 2DXYZPlotVidep.py
   
 A typical plot generated from 2DXYZPlotVideo.py looks like:
+![2DXYZPlotVideo.py Example Plot](https://raw.githubusercontent.com/lenardcarroll/2DXYZPlotVideo.py/main/frame_0.jpg "Example of plot from 2DXYZPlotVideo.py")
